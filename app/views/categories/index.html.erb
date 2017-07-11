@@ -6,7 +6,7 @@
             <div class="thumbnail">
               <div class="image-grid">
                 <% Product.where(category: category).each do |product| %>
-                  <%= image_tag(product.image.url(:thumb)) %>
+                  <%= image_tag product.image.url(:thumb), class: 'product-thumb' %>
                 <% end %>
               </div>
               <div class="caption">
