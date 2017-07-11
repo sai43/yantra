@@ -1,14 +1,72 @@
 <div class="container">
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-      <%= f.input :name, :required => true %>
-      <%= f.input :email, :required => true %>
-      <%= f.input :message, :as => :text, :required => true %>
-      <div class= "hidden">
-        <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="well well-sm">
+        <%= form_for @contact do |f| %>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= f.label :name %>
+                  <%= f.text_field :name, required: true, class: "form-control", id: "name", placeholder: "Enter name" %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :email %>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-envelope"></span>
+                    </span>
+                    <%= f.email_field :email, :required => true, class: "form-control", id: "email", placeholder: "Enter email" %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                 <%= f.label :subject %>
+                  <%= f.select :subject, options_for_select({'Choose one:' => 'na', 'General Customer Service' => 'service', 'Suggestions' => 'suggestions', 'Product Support' => 'product'}), {}, {class: "form-control"} %>
+                </div>
+
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= f.label :message %>
+                  <%= f.text_area :message, required: true, size: '25x9', class: "form-control", id: 'message', placeholder: "Message" %>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <%= f.submit 'Send Message', class: "btn btn-primary pull-right" %>
+              </div>
+            </div>
+        <% end %>
       </div>
-      <div>
-        </br>
-        <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
-      </div>
-  <% end %>
+    </div>
+    <div class="col-md-4">
+      <form>
+        <legend><span class="glyphicon glyphicon-globe"></span> Contact Details</legend>
+        <strong>Yantra Consulting Pvt.Ltd.</strong><br>
+        <br>
+        <address>
+          Srinivas Nagar Colony<br>
+          Secunderabad, Telangana-500061<br>
+          <abbr title="Phone">
+            P:</abbr>
+          (+91) 7799 123486
+        </address>
+
+        <address>
+          Subhash Nagar<br>
+          Rajahmundry, AndhraPradesh-533105<br>
+          <abbr title="Phone">
+            P:</abbr>
+          (+91) 7799 123486
+        </address>
+
+        <address>
+          <strong>Email</strong><br>
+          <a href="mailto:#">yantramailbox@gmail.com</a>
+        </address>
+      </form>
+    </div>
+  </div>
 </div>
+
