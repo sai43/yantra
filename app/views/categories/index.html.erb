@@ -1,46 +1,20 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-md-4">
-      <a href="#" class="thumbnail">
-        <img src="https://www.daz3d.com/media/catalog/product/cache/1/thumbnail/689303033aebc8cae535000c73c8db4b/0/3/03-nature---bushes-bundle-daz3d.jpg" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-4">
-      <a href="#" class="thumbnail">
-        <img src="https://www.daz3d.com/media/catalog/product/cache/1/thumbnail/689303033aebc8cae535000c73c8db4b/0/3/03-nature---bushes-bundle-daz3d.jpg" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-4">
-      <a href="#" class="thumbnail">
-        <img src="https://www.daz3d.com/media/catalog/product/cache/1/thumbnail/689303033aebc8cae535000c73c8db4b/0/3/03-nature---bushes-bundle-daz3d.jpg" alt="...">
-      </a>
-    </div>
+
+    <% @categories.each_slice(3) do |list|%>
+      <div class="row">
+        <% list.each do |category|%>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <%= image_tag("logo.png")%>
+              <div class="caption">
+                <h3><%= category.name %></h3>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
   </div>
 </div>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img src="https://www.daz3d.com/media/catalog/product/cache/1/thumbnail/689303033aebc8cae535000c73c8db4b/0/3/03-nature---bushes-bundle-daz3d.jpg" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img src="https://www.daz3d.com/media/catalog/product/cache/1/thumbnail/689303033aebc8cae535000c73c8db4b/0/3/03-nature---bushes-bundle-daz3d.jpg" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img src="https://www.daz3d.com/media/catalog/product/cache/1/thumbnail/689303033aebc8cae535000c73c8db4b/0/3/03-nature---bushes-bundle-daz3d.jpg" alt="...">
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img src="https://www.daz3d.com/media/catalog/product/cache/1/thumbnail/689303033aebc8cae535000c73c8db4b/0/3/03-nature---bushes-bundle-daz3d.jpg" alt="...">
-      </a>
-    </div>
-  </div>
-</div>
 
