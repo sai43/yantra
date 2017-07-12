@@ -1,23 +1,24 @@
-<div class="container">
-  <% count = 0 %>
-    <% @categories.each_slice(3) do |list| %>
-      <div class="row">
-        <% list.each_with_index do |category, index| %>
-            <% count += 1 %>
-          <div class="col-sm-6 col-md-4" id=<%="category-tile-#{count}"%>>
-            <div class="thumbnail banner">
-              <p><%= link_to '', category_path(category),  title: "#{category.name}" %></p>
-              <div class="image-grid">
-                <% Product.where(category: category).each do |product| %>
-                  <%= image_tag product.image.url(:thumb), class: 'product-thumb' %>
-                <% end %>
-              </div>
+<% count = 0 %>
+  <% @categories.each_slice(3) do |list| %>
+    <div class="row">
+      <% list.each_with_index do |category, index| %>
+          <% count += 1 %>
+        <div class="col-sm-6 col-md-4" id=<%="category-tile-#{count}"%>>
+          <div class="thumbnail banner">
+            <p><%= link_to '', category_path(category),  title: "#{category.name}" %></p>
+            <div class="image-grid">
+              <% Product.where(category: category).each do |product| %>
+                <%= image_tag product.image.url(:thumb), class: 'product-thumb' %>
+              <% end %>
             </div>
           </div>
-        <% end %>
-      </div>
-  <% end %>
-</div>
+        </div>
+      <% end %>
+    </div>
+<% end %>
+
+<%= link_to 'New Category', new_category_path, class: 'btn btn-primary' %>
+
 
 
 
