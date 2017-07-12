@@ -8,7 +8,7 @@
             <p><%= link_to '', category_path(category),  title: "#{category.name}" %></p>
             <div class="image-grid">
               <% Product.where(category: category).each do |product| %>
-                <%= image_tag product.image.url(:thumb), class: 'product-thumb' %>
+                  <% unless product.image_url.nil? %><%= image_tag product.image_url(:thumb), class: 'product-thumb' %><br /><% end %>
               <% end %>
             </div>
           </div>
