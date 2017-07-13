@@ -1,7 +1,7 @@
 body
   font-family: 'Libre Franklin', sans-serif
   & .container
-    padding-top: 150px
+    padding-top: 15%
 
 .thumbnail
   background-color: rgba(96, 96, 96, 0.40)
@@ -56,29 +56,20 @@ body
   content: ""
   opacity: 0.5
   position: absolute
-  transform: scaleX(0)
   transition: all 0.5s ease 0s
   width: 100%
   height: 100%
 
-.banner:hover a::before
-  transform: scaleX(1)
 
 .banner a::after
   opacity: 0
   background: #000 none repeat scroll 0 0
-  bottom: 5%
-  left: 5%
-  right: 5%
-  top: 5%
   content: attr(title)
   margin: auto
   position: absolute
   text-align: center
-  transform: scale(3)
   transition: all 0.5s ease 0s
-  width: 120px
-  height: 120px
+  width: 100%
   line-height: 60px
 
 .banner:hover a::after
@@ -93,4 +84,17 @@ body
 .navbar-default .navbar-nav > li > a:hover
   color: #00b2d6
   text-decoration: underline
+
+#myFooter
+  margin-top: 10%
+  background-color: #363839
+  position: absolute
+  left: 0
+  right: 0
+  height: 120px
+  z-index: 999
+
+.footer-copyright
+  color: #DADADA
+
 
