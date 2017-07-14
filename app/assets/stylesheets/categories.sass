@@ -43,11 +43,9 @@ body
   height: 60px
   background-color: rgba(22, 41, 30, 0.96)
 
-.banner
 
 .banner a
   display: block
-  position: relative
 
 .banner a::before
   background: #000 none repeat scroll 0 0
@@ -56,19 +54,23 @@ body
   position: absolute
   transition: all 0.5s ease 0s
   width: 100%
-  height: 100%
 
+.banner:hover a::before
+  transform: scaleX(1)
 
 .banner a::after
   opacity: 0
   background: #000 none repeat scroll 0 0
+  top: 0
   content: attr(title)
+  color: #ff5900
   margin: auto
   position: absolute
   text-align: center
   transition: all 0.5s ease 0s
-  width: 100%
-  line-height: 60px
+  height: 100%
+  width: 90%
+  padding-top: 15%
 
 .banner:hover a::after
   transform: scale(1)
