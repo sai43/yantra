@@ -1,4 +1,4 @@
-  <div class="row">
+<div class="row" xmlns="http://www.w3.org/1999/html">
     <div class="col-md-8">
       <div class="well well-sm">
         <%= form_for @contact do |f| %>
@@ -47,22 +47,21 @@
         <address>
           Srinivas Nagar Colony<br>
           Secunderabad, Telangana-500061<br>
-          <abbr title="Phone">
-            P:</abbr>
-          (+91) 7799 123486
         </address>
 
         <address>
           Subhash Nagar<br>
           Rajahmundry, AndhraPradesh-533105<br>
-          <abbr title="Phone">
-            P:</abbr>
-          (+91) 7799 123486
+
         </address>
 
         <address>
-          <strong>Email</strong><br>
-          <a href="mailto:#">yantramailbox@gmail.com</a>
+          <span class="glyphicon glyphicon-phone"></span>
+           <a href="tel:+91 7799 123486">Click me!</a>
+          <br>
+          <br>
+          <strong>Email :</strong>
+           <a href="mailto:#">yantramailbox@gmail.com</a>
         </address>
       </form>
     </div>
